@@ -1,10 +1,10 @@
-1. VCS(Version Control System):
+﻿1. VCS(Version Control System):
 	VCS cho phép bạn khôi phục lại một file về phiên bản trước đó, khôi phục dự án về phiên bản trước đó, so sánh sự thay đổi theo thời gian của từng file cũng nhưu cả dự án, theo dõi xem ai là người thay đổi cuối cùng và nhiều hơn thế nữa.
 	Có ba hệ thống quản lí phiên bản là:
 		Hệ thống quản lý phiên bản cục bộ
 		Hệ thống quản lý phiên bản tập trung
 		Hệ thống quản lý phiên bản phân tán
-2. Git:
+2. Git va cac VCS khac
 	Mỗi tệp tin trong git được quản lý dựa trên 3 trạng thái:
 		Modified: Trạng thái tệp tin đã thay đổi nhưng chưa được commit và cơ sở dữ liệu.
 		Staged : Trạng thái bạn đã đánh dấu là sẽ commit phiên bản hiện tại vào lần commit sắp tới.
