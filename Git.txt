@@ -1,0 +1,59 @@
+1. VCS(Version Control System):
+	VCS cho phép bạn khôi phục lại một file về phiên bản trước đó, khôi phục dự án về phiên bản trước đó, so sánh sự thay đổi theo thời gian của từng file cũng nhưu cả dự án, theo dõi xem ai là người thay đổi cuối cùng và nhiều hơn thế nữa.
+	Có ba hệ thống quản lí phiên bản là:
+		Hệ thống quản lý phiên bản cục bộ
+		Hệ thống quản lý phiên bản tập trung
+		Hệ thống quản lý phiên bản phân tán
+2. Git:
+	Mỗi tệp tin trong git được quản lý dựa trên 3 trạng thái:
+		Modified: Trạng thái tệp tin đã thay đổi nhưng chưa được commit và cơ sở dữ liệu.
+		Staged : Trạng thái bạn đã đánh dấu là sẽ commit phiên bản hiện tại vào lần commit sắp tới.
+		Committed: Trạng thái dữ liệu đã được lưu trữ an toàn trong cơ sở dữ liệu
+	Tương ứng với ba trạng thái là ba phần riêng biệt của một project sử dụng Git:
+
+		Thư mục .git : Tương ứng với trạng thái commit. Nơi lưu trữ các metadata và cơ sở dữ liệu của dự án. Là phần được sao lưu về khi bản clone một dự án.
+		Khu vực staging area: Tương ứng với trạng thái staged.
+		Thư mục làm việc: Tương ứng với trạng thái modified. Chứa các file đang được người dùng chỉnh sửa. Những tệp tin được pull về từ cơ sở dữ liệu và lưu trong ổ cứng để có thể sử dụng và chỉnh sủa.
+3. Cách sử dụng cơ bản:
+	Nếu bạn đang có một thư mục chứa dự án mà bạn muốn theo dõi dự án này trong git. Bạn gõ lệnh sau vào terminal tại thư mục chứa dự án đó.
+		$ git init
+	 Để có thể theo dõi tệp tin bạn sử dụng lệnh
+		git add 
+	Để có thể commit những thay đổi bạn có thể sử dụng lệnh : 
+		git commit -m "các thay đổi"
+	Đẩy lên git:
+		git remote add origin url
+		git push -u origin master
+	Copy:  git clone url 
+	Xem lịch sử commit:
+		git log
+	Khôi phục: git reset --hard "địa chỉ id"
+4: Ví dụ:
+	
+	F:\OFF_1>git init
+	Reinitialized existing Git repository in F:/OFF_1/.git/
+
+	F:\OFF_1>git add .
+	warning: LF will be replaced by CRLF in OFF_1/2048-AI/dist/README.TXT.
+	The file will have its original line endings in your working directory.
+
+	F:\OFF_1>git commit -m "first commit"
+
+	F:\OFF_1>git remote add origin https://github.com/LeBaoChi/test.git
+
+	F:\OFF_1>git push -u origin master
+	F:\OFF_1>git log
+	commit e9f862b403f84ade63b3a4e9b648ce1d17c667b6
+	Author: LeBaoChi <lebaochi1809@gmail.com>
+	Date:   Wed Apr 12 17:45:31 2017 +0700
+
+		delete
+
+	commit 3e5521f993875574d8f5ec6ea381ed1e5f44129a
+	Author: LeBaoChi <lebaochi1809@gmail.com>
+	Date:   Wed Apr 12 17:43:13 2017 +0700
+
+		first commit
+
+	F:\OFF_1>git reset --hard 3e5521f993875574d8f5ec6ea381ed1e5f44129a
+	HEAD is now at 3e5521f first commit
